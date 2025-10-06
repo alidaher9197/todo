@@ -1,0 +1,164 @@
+        body {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .sign {
+            align-self: center;
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .sign {
+            min-width: 40vw;
+            height: 85vh;
+        }
+        
+        .sign>h1 {
+            color: var(--color-blue);
+            margin-bottom: 20px;
+        }
+        
+        .sign>.sign_form>div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        #togglePassword,
+        #toggleRepassword {
+            position: absolute;
+            right: 12%;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--color-blue);
+        }
+        
+        .sign>.sign_form {
+            border: 1px solid var(--color-blue);
+            box-shadow: 1px 1px 1px 1px var(--color-blue);
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sign>.sign_form>input[type="text"],
+        .sign>.sign_form>div>input[type="password"],
+        .sign>.sign_form>div>input[type="text"] {
+            width: 80%;
+            height: 40px;
+            border: 1px solid var(--color-blue);
+            color: var(--color-blue);
+            caret-color: var(--color-blue);
+            font-size: 1rem;
+            padding: 20px;
+        }
+        
+        .sign>.sign_form>input[type="text"]::placeholder,
+        .sign>.sign_form>div>input[type="password"]::placeholder,
+        .sign>.sign_form>div>input[type="text"]::placeholder {
+            color: var(--color-blue);
+            opacity: 0.6;
+        }
+        
+        .sign>.sign_form>input[type="text"]:focus,
+        .sign>.sign_form>div>input[type="password"]:focus,
+        .sign>.sign_form>div>input[type="text"]:focus {
+            box-shadow: 1px 1px 1px 4px var(--color-blue);
+            border: none;
+            outline: none;
+        }
+        
+        .sign>.sign_form>input[type="submit"] {
+            width: 40%;
+            height: 40px;
+            background-color: var(--color-blue);
+            border: none;
+            color: var(--color-white);
+            font-size: 1rem;
+            border-radius: var(--border-radius-5);
+        }
+        
+        .sign>.sign_form>input[type="submit"]:focus {
+            outline: grey;
+            box-shadow: 2px 2px 2px grey;
+        }
+        
+        .sign>.sign_form>a:focus {
+            outline: none;
+            font-weight: bold;
+        }
+        
+        .sign>.sign_form>a {
+            color: var(--color-blue);
+            text-decoration: none;
+            align-self: end;
+            padding-right: 13%;
+        }
+        
+        .sign>.sign_form>.error {
+            color: red;
+            font-size: 0.7rem;
+        }
+        /* Medium screens: ≤1200px */
+        
+        @media screen and (max-width: 1200px) {
+            .sign {
+                min-width: 60vw;
+                height: 85vh;
+            }
+        }
+        /* Tablets: ≤992px */
+        
+        @media screen and (max-width: 992px) {
+            .sign {
+                min-width: 70vw;
+                height: 80vh;
+            }
+            .sign>.sign_form {
+                gap: 40px;
+            }
+            @media (orientation: landscape) {
+                .sign>.sign_form {
+                    gap: 20px;
+                }
+            }
+        }
+        /* Large phones: ≤768px */
+        
+        @media screen and (max-width: 768px) {
+            .sign {
+                min-width: 95vw;
+                height: 90vh;
+            }
+        }
+        /* Small phones: ≤576px */
+        
+        @media screen and (max-width: 576px) {
+            .sign {
+                min-width: 98vw;
+                height: 100vh;
+            }
+        }
+        
+        @media screen and (max-height: 420px) {
+            body {
+                min-height: 600px;
+                align-content: start;
+            }
+            .sign {
+                min-width: 500px;
+                height: 500px
+            }
+        }
