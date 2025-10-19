@@ -19,7 +19,16 @@ const checkuser = () => {
     const user = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
     time_to_live = 60 * 60 * 24 * 7;
-    check_validity_user(user) && check_validity_password(password) && (document.cookie = `${user}=${password}; max-age =${time_to_live}`);
+
+    let id;
+    let array, index;
+    do {
+        id = Math.floor(Math.random() * 1000000).toString(); // ensure it's string
+        const cookies = decodeURIComponent(document.cookie);
+        array = cookies ? cookies.split("; ") : [];
+        index = array.findIndex((element) => element.split("=")[0] === id);
+    } while (index !== -1);
+    check_validity_user(user) && (document.cookie = `${id}=${user}; max-age =${time_to_live}`);
 
 
 

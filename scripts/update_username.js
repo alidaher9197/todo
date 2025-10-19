@@ -1,3 +1,11 @@
+const cookies = document.cookie.split('; ');
+const firstCookie = cookies[0]; // example: "username=Ali"
+
+const [key, value] = cookies[0].split('=');
+console.log('Key:', key);
+document.querySelector('#username').value = decodeURIComponent(value)
+
+
 const username = document.querySelector('#username');
 
 const chech = () => {
@@ -15,7 +23,7 @@ const check_cokies = () => {
     console.log("First cookie value:", value);
     let time_to_live = 60 * 60 * 24 * 7;
     document.cookie = `${key}=null; max-age=0`;
-    document.cookie = `${new_username}=${value}; max-age=${time_to_live}`;
+    document.cookie = `${key}=${new_username}; max-age=${time_to_live}`;
     document.querySelector(".error").classList.add("green")
     document.querySelector(".error").innerHTML = "Username changed";
 }
