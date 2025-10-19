@@ -1,0 +1,11 @@
+nav>section>ul>li:nth-child(4) {
+    border-bottom: 3px solid white;
+}
+
+.update-username {
+    justify-content: start;
+}
+
+.todo-form {
+    height: 250px !important;
+}

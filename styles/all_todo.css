@@ -1,0 +1,98 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    width: 80%;
+    justify-self: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+nav>section>ul>li:first-child {
+    border-bottom: 3px solid white;
+}
+
+main>div {
+    width: 100%;
+    min-height: 200px;
+    border: 2px solid var(--color-blue);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: var(--border-radius-5);
+}
+
+main>div>h2 {
+    justify-self: center;
+    color: var(--color-blue);
+    padding-bottom: 40px;
+    word-break: break-all;
+}
+
+main>div>p {
+    width: 100%;
+    text-align: end;
+    font-weight: bold;
+    font-size: 1rem;
+    color: grey;
+}
+
+main>div>section>button {
+    border: none;
+    width: 80px;
+    height: 30px;
+    border-radius: var(--border-radius-5);
+    color: var(--color-white);
+    background-color: green;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+main>div>section>button:focus {
+    outline: none;
+    box-shadow: 2px 2px 2px 2px darkgray;
+}
+
+main>div>section>button:first-child {
+    background-color: var(--color-blue);
+}
+
+main>div>section>button:nth-child(2) {
+    background-color: var(--color-red);
+}
+
+main>h2 {
+    color: var(--color-blue);
+    text-align: center;
+}
+
+
+/* Medium screens: ≤1200px */
+
+@media screen and (max-width: 1200px) {}
+
+
+/* Tablets: ≤992px */
+
+@media screen and (max-width: 992px) {}
+
+
+/* Large phones: ≤768px */
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 95%;
+    }
+}
+
+
+/* Small phones: ≤576px */
+
+@media screen and (max-width: 576px) {}
+
+@media screen and (max-height: 420px) {}

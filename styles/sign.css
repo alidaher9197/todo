@@ -1,11 +1,12 @@
         body {
             display: flex;
+            flex-direction: column;
             align-content: center;
             justify-content: center;
             height: 100vh;
         }
         
-        .sign {
+        .todo-main {
             align-self: center;
             align-self: center;
             display: flex;
@@ -14,17 +15,17 @@
             align-items: center;
         }
         
-        .sign {
+        .todo-main {
             min-width: 40vw;
             height: 85vh;
         }
         
-        .sign>h1 {
+        .todo-main>h1 {
             color: var(--color-blue);
             margin-bottom: 20px;
         }
         
-        .sign>.sign_form>div {
+        .todo-main>.todo-form>div {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -32,7 +33,10 @@
         }
         
         #togglePassword,
-        #toggleRepassword {
+        #toggleRepassword,
+        #old-password,
+        #new-password,
+        #re-password {
             position: absolute;
             right: 12%;
             top: 50%;
@@ -41,7 +45,7 @@
             color: var(--color-blue);
         }
         
-        .sign>.sign_form {
+        .todo-main>.todo-form {
             border: 1px solid var(--color-blue);
             box-shadow: 1px 1px 1px 1px var(--color-blue);
             width: 100%;
@@ -53,9 +57,19 @@
             justify-content: center;
         }
         
-        .sign>.sign_form>input[type="text"],
-        .sign>.sign_form>div>input[type="password"],
-        .sign>.sign_form>div>input[type="text"] {
+        .todo-main>.todo-form>textarea {
+            width: 80%;
+            height: 200px;
+            border: 1px solid var(--color-blue);
+            color: var(--color-blue);
+            caret-color: var(--color-blue);
+            font-size: 1rem;
+            padding: 20px;
+        }
+        
+        .todo-main>.todo-form>input[type="text"],
+        .todo-main>.todo-form>div>input[type="password"],
+        .todo-main>.todo-form>div>input[type="text"] {
             width: 80%;
             height: 40px;
             border: 1px solid var(--color-blue);
@@ -65,22 +79,24 @@
             padding: 20px;
         }
         
-        .sign>.sign_form>input[type="text"]::placeholder,
-        .sign>.sign_form>div>input[type="password"]::placeholder,
-        .sign>.sign_form>div>input[type="text"]::placeholder {
+        .todo-main>.todo-form>input[type="text"]::placeholder,
+        .todo-main>.todo-form>div>input[type="password"]::placeholder,
+        .todo-main>.todo-form>div>input[type="text"]::placeholder,
+        .todo-main>.todo-form>textarea::placeholder {
             color: var(--color-blue);
             opacity: 0.6;
         }
         
-        .sign>.sign_form>input[type="text"]:focus,
-        .sign>.sign_form>div>input[type="password"]:focus,
-        .sign>.sign_form>div>input[type="text"]:focus {
+        .todo-main>.todo-form>input[type="text"]:focus,
+        .todo-main>.todo-form>div>input[type="password"]:focus,
+        .todo-main>.todo-form>div>input[type="text"]:focus,
+        .todo-main>.todo-form>textarea:focus {
             box-shadow: 1px 1px 1px 4px var(--color-blue);
             border: none;
             outline: none;
         }
         
-        .sign>.sign_form>input[type="submit"] {
+        .todo-main>.todo-form>input[type="submit"] {
             width: 40%;
             height: 40px;
             background-color: var(--color-blue);
@@ -90,31 +106,31 @@
             border-radius: var(--border-radius-5);
         }
         
-        .sign>.sign_form>input[type="submit"]:focus {
+        .todo-main>.todo-form>input[type="submit"]:focus {
             outline: grey;
             box-shadow: 2px 2px 2px grey;
         }
         
-        .sign>.sign_form>a:focus {
+        .todo-main>.todo-form>a:focus {
             outline: none;
             font-weight: bold;
         }
         
-        .sign>.sign_form>a {
+        .todo-main>.todo-form>a {
             color: var(--color-blue);
             text-decoration: none;
             align-self: end;
             padding-right: 13%;
         }
         
-        .sign>.sign_form>.error {
+        .todo-main>.todo-form>.error {
             color: red;
             font-size: 0.7rem;
         }
         /* Medium screens: ≤1200px */
         
         @media screen and (max-width: 1200px) {
-            .sign {
+            .todo-main {
                 min-width: 60vw;
                 height: 85vh;
             }
@@ -122,15 +138,15 @@
         /* Tablets: ≤992px */
         
         @media screen and (max-width: 992px) {
-            .sign {
+            .todo-main {
                 min-width: 70vw;
                 height: 80vh;
             }
-            .sign>.sign_form {
+            .todo-main>.todo-form {
                 gap: 40px;
             }
             @media (orientation: landscape) {
-                .sign>.sign_form {
+                .todo-main>.sign-form {
                     gap: 20px;
                 }
             }
@@ -138,7 +154,7 @@
         /* Large phones: ≤768px */
         
         @media screen and (max-width: 768px) {
-            .sign {
+            .todo-main {
                 min-width: 95vw;
                 height: 90vh;
             }
@@ -146,7 +162,7 @@
         /* Small phones: ≤576px */
         
         @media screen and (max-width: 576px) {
-            .sign {
+            .todo-main {
                 min-width: 98vw;
                 height: 100vh;
             }
@@ -157,7 +173,7 @@
                 min-height: 600px;
                 align-content: start;
             }
-            .sign {
+            .todo-main {
                 min-width: 500px;
                 height: 500px
             }

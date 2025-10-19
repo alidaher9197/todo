@@ -4,31 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Update Username</title>
     <link rel="stylesheet" href="styles/root.css">
     <link rel="stylesheet" href="styles/sign.css">
+    <link rel="stylesheet" href="styles/update_username.css">
     <link rel="shortcut icon" href="assets/logo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+
+
 </head>
 
-<body>
+<body class="update-username">
+    <div id="navbar"></div>
+    <script src="scripts/nav.js"></script>
     <main class="todo-main">
-        <h1>Sign in</h1>
-        <form class="todo-form" action="all_todo.html" id="signin-form">
+        <h1>Update Username</h1>
+        <form class="todo-form" action="all_todo.html" onsubmit="return checkPasswords()">
             <input type="text" name="username" id="username" placeholder="Enter your username" required minlength="3" maxlength="10">
-            <div>
-                <input type="password" name="password" id="password" placeholder="Enter your password" required minlength="6" maxlength="20">
-                <i class="fa-solid fa-eye far fa-eye" id="togglePassword"></i>
-            </div>
 
-            <input type="submit" value="Sign in">
-            <a href="signup.html">Create new account</a>
+
+            <input type="submit" value="Update Username">
+
             <div class="error" id="error"></div>
         </form>
     </main>
-    <script src="scripts/rooot.js"></script>
-    <script src="scripts/index.js"></script>
+    <script src="scripts/update_username.js"></script>
 </body>
 
 </html>
