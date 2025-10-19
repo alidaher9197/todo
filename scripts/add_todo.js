@@ -7,7 +7,13 @@ const check = () => {
 const add_to_local = () => {
     const todo = document.querySelector('textarea').value;
     const dateTimeStamp = new Date().toLocaleString("en-US");
-    localStorage.setItem(dateTimeStamp, todo);
+    const value = { 'todo': todo, 'date': dateTimeStamp }
+    let id;
+    do {
+        id = Math.floor(Math.random() * 1000000);
+    } while (localStorage.getItem(id));
+    localStorage.setItem(id, JSON.stringify(value));
+    //localStorage.setItem(dateTimeStamp, todo);
     document.querySelector('.error').classList.add("green");
     document.querySelector('.error').textContent = "added sucessfully ";
     document.querySelector('textarea').value = "";

@@ -10,11 +10,13 @@ for (const key in sortedData) {
     try {
         // Try to parse JSON values
 
+        const data_json = JSON.parse(allData[key]);
+
         main.innerHTML = main.innerHTML + `<div>
-            <h2>${allData[key]}</h2>
-            <p>${key}</p>
+            <h2>${data_json.todo}</h2>
+            <p>${data_json.date}</p>
             <section>
-                <button onclick="goToEdit('${key}','${allData[key]}')">Edit</button>
+                <button onclick="goToEdit('${key}')">Edit</button>
                 <button onclick="delete_todo(this, '${key}')">Delete</button>
             </section> 
         </div>`;
@@ -32,6 +34,6 @@ const delete_todo = (button, key) => {
     localStorage.length == 0 && (main.innerHTML = "<h2> No Todo yet</h2>")
 }
 
-function goToEdit(key, value) {
-    window.location.href = `update_todo.html?key=${key}&value=${value}`;
+function goToEdit(key) {
+    window.location.href = `update_todo.html?key=${key}`;
 }
