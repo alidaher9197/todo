@@ -1,3 +1,4 @@
+document.cookie != "" && (window.location = 'all_todo.html');
 document.querySelector("#username").addEventListener('keyup', check_signin);
 document.querySelector("#password").addEventListener('keyup', check_signin);
 
@@ -17,6 +18,9 @@ togglePassword.addEventListener('click', function() {
 const checkuser = () => {
     const user = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
+    time_to_live = 60 * 60 * 24 * 7;
+    check_validity_user(user) && check_validity_password(password) && (document.cookie = `${user}=${password}; max-age =${time_to_live}`);
+
 
 
 

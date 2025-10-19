@@ -127,6 +127,10 @@
             color: red;
             font-size: 0.7rem;
         }
+        
+        .green {
+            color: green !important;
+        }
         /* Medium screens: ≤1200px */
         
         @media screen and (max-width: 1200px) {
