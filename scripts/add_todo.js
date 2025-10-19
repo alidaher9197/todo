@@ -1,4 +1,7 @@
+const value = sessionStorage.getItem('key');
+document.querySelector('textarea').value = value;
 const check = () => {
+    sessionStorage.setItem('key', document.querySelector('textarea').value);
     document.querySelector('.error').textContent = "";
     document.querySelector('.error').classList.remove("green");
     const todo = document.querySelector('textarea').value;
